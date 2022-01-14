@@ -8,7 +8,7 @@ import { SocialCardType } from './constants/social-card-type';
 })
 export class AppComponent {
   title = 'ng-dynamic-components';
-  selectedCardType: SocialCardType;
+  selectedCardType:SocialCardType;
   cardTypes = SocialCardType;
 
   setCardType(type: SocialCardType) {
