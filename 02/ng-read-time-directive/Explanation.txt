@@ -1,0 +1,17 @@
+Creating a directive to calculate the read time 
+for articles
+In this recipe, you'll create an attribute directive to calculate the read time of an article, 
+just like Medium. The code for this recipe is highly inspired by my existing repository 
+on GitHub, which you can view at the following link: https://github.com/
+AhsanAyaz/ngx-read-time
+
+How it works…
+The appReadTime directive is at the heart of this recipe. We use the ElementRef
+service inside the directive to get the native element that the directive is attached to, then 
+we take out its text content. The only thing that remains then is to perform the calculation. 
+We first split the entire text content into words by using the /\s+/g regular expression
+(regex), and thus we count the total words in the text content. Then, we divide the word 
+count by the wordsPerMinute value we have in the configuration to calculate how 
+many minutes it would take to read the entire text. Easy peasy, lemon squeezy.
+See also
+• Ngx Read Time library (https://github.com/AhsanAyaz/ngx-readtim
