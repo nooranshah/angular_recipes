@@ -1,0 +1,16 @@
+How to use *ngIf and *ngSwitch together
+
+How it works…
+
+
+Since we can't use two structural directives on a single element, we can always use 
+another HTML element as a parent to use the other structural directive. However, that 
+adds another element to the DOM and might cause problems for your element hierarchy, 
+based on your implementation. <ng-container>, however, is a magical element 
+from Angular's core that is not added to the DOM. Instead, it just wraps the logic/
+condition that you apply to it, which makes it really easy for us to just add a *ngIf or 
+*ngSwitchCase directive on top of your existing elements. 
+
+
+• Group sibling elements with <ng-container> documentation (https://
+angular.io/guide/structural-directives#group-siblingelements-with-ng-container)
