@@ -1,0 +1,25 @@
+Writing your first custom structural directive
+
+How it works…
+Structural directives in Angular are special for multiple reasons. First, they allow you 
+to manipulate DOM elements—that is, adding/removing/manipulating based on your 
+needs. Moreover, they have this * prefix that binds to all the magic Angular does behind 
+the scenes. As an example, *ngIf and *ngFor are both structural directives that 
+behind the scenes work with the <ng-template> directive containing the content you 
+bind the directive to and create the required variables/properties for you in the scope 
+of ng-template. In the recipe, we do the same. We use the TemplateRef service 
+to access the <ng-template> directive that Angular creates for us behind the scenes, 
+containing the host element on which our appIfNot directive is applied. Then, based 
+on the value provided to the directive as input, we decide whether to add the magical 
+ng-template to the view or clear the ViewContainerRef service to remove 
+anything inside it.
+
+
+
+See also
+• Angular structural directive microsyntax documentation (https://angular.
+io/guide/structural-directives#microsyntax)
+• Angular structural directives documentation (https://angular.io/guide/
+structural-directives)
+• Creating a structural directive by Rangle.io (https://angular-2-trainingbook.rangle.io/advanced-angular/directives/creating_a_
+structural_directive)
