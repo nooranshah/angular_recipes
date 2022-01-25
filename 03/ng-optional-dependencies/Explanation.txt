@@ -1,0 +1,15 @@
+Optional dependencies
+
+Optional dependencies in Angular are really powerful when you use or configure 
+a dependency that may or may not exist or that has been provided within an Angular
+application. In this recipe, we'll learn how to use the @Optional decorator to configure 
+optional dependencies in our components/services. We'll work with LoggerService
+and ensure our components do not break if it has not already been provided.
+
+
+How it works
+
+The @Optional decorator is a special parameter from the @angular/core package, 
+which allows you to mark a parameter for a dependency as optional. Behind the scenes, 
+Angular will provide the value as null when the dependency doesn't exist or is not 
+provided to the app. 
