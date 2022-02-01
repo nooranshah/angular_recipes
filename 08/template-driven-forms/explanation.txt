@@ -1,0 +1,33 @@
+Creating your first template-driven Angular 
+form
+
+
+How it works…
+The key to using template-driven forms in Angular resides in FormsModule, the 
+ngForm directive, by creating a template variable using the ngForm directive and 
+using the [(ngModel)] two-way data binding along with the name attributes for 
+inputs in the template. We began by creating a simple form with some inputs. Then, we 
+added the FormsModule, which is necessary for using the ngForm directive and the 
+[(ngModel)] two-way data binding. Once we added the module, we could use both the 
+directive and the data binding with our newly created local property named newLog in 
+the ReleaseFormComponent. Notice that it could be an instance of the ReleaseLog
+class, but we kept it as an object of the IReleaseLog type instead because we don't want 
+the ReleaseLog class's message property as we don't use it. With the [(ngModel)]
+usages and the #releaseForm template variable in place, we could submit the form 
+using the ngSubmit emitter of Angular's <form> directive. Notice that we pass the 
+releaseForm variable to the formSubmit method, which makes it easier to test the 
+functionality for us. Upon submitting the form, we use the form's value to create a new 
+ReleaseLog item and we emit it using the newReleaseLog output emitter. Notice that 
+if you provide an invalid version for the new release log, the app will throw an error and 
+will not create a release log. This is because we validate the version in the constructor
+of the ReleaseLog class. Finally, when this newReleaseLog event is captured by 
+VersionControlComponent, it calls the addNewReleaseLog method, which adds 
+our newly created release log to the releaseLogs array. And since the releaseLogs
+array is passed as an @Input() to ReleaseLogsComponent, it immediately shows it 
+right away.
+See also
+• Building a template-driven form in Angular: https://angular.io/guide/
+forms#building-a-template-driven-form
+
+
+
