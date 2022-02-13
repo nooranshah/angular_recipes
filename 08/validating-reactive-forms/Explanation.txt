@@ -1,0 +1,22 @@
+Form validation with Reactive forms
+
+How it works…
+We started the recipe by adding the validators, and Angular has got a bunch of 
+validators out of the box, including Validators.email, Validators.pattern, 
+and Validators.required. We used the required validator with the pattern
+validator in our recipe for the inputs for the app name and the version, respectively. 
+After that, to show the hints/errors for invalid inputs, we added some conditional styles 
+to show a border-bottom on the inputs. We also added some <div> elements with 
+class="alert alert-danger", which are basically Bootstrap alerts to show the 
+errors on invalid values for the form controls. Notice that we're using the following 
+pattern to hide the error elements:
+[hidden]="releaseForm.get(CONTROL_NAME).valid || releaseForm.
+get(CONTROL_NAME).pristine"
+We're using the condition with .pristine to make sure that as soon as the user selects 
+the correct input and the input is modified, we hide the error again so that it doesn't show 
+while the user is typing in the input or making another selection. Finally, we made sure 
+that the form cannot even be submitted if the values of the form controls are invalid. We 
+disabled the submit button using [disabled]="releaseForm.invalid".
+See also
+• Angular docs for validating Reactive forms: https://angular.io/guide/
+reactive-forms#validating-form-input
