@@ -12,7 +12,7 @@ describe('ReleaseFormComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ReleaseFormComponent],
-      schemas: [
+       schemas: [
         CUSTOM_ELEMENTS_SCHEMA
       ],
       imports: [FormsModule],
