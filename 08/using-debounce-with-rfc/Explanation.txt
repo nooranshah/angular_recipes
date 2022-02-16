@@ -1,0 +1,26 @@
+Using debounce with Reactive form control
+
+How it works…
+The main task for the recipe was quite easy. We just used the debounceTime
+operator from the rxjs package and used it with our Reactive form control's 
+.valueChanges Observable. Since we're using it within the .pipe() operator before 
+the .subscribe() method, every time we change the value of the input, either by 
+entering a value or by pressing the backspace key, it waits for 300ms according to the 
+searchDebounceTime property and then calls the searchUsers() method.
+
+We also wrote some tests in this recipe. Notice that we spy on the searchUsers()
+method since that is what it's supposed to be called whenever we change the value of the 
+'username' form control. We're wrapping the test functions inside the fakeAsync
+method so we can control the asynchronous behavior of the use cases in our tests. We 
+then set the value of the form control using the FormControl.setValue() method, 
+which should trigger the method provided as an argument to the .subscribe()
+method after the time according to searchDebounceTime has passed. We then used 
+the tick() method with the value of searchDebounceTime so it simulates an 
+asynchronous passage of time. Then we write our expect() block to check whether the 
+searchUsers() method should or shouldn't have been called. Finally, at the end of the 
+tests, we use the discardPeriodicTasks() method. We use this method so that we 
+don't face the Error: 1 periodic timer(s) still in the queue. error and 
+our tests work.
+See also
+• RxJS DebounceTime operator: https://rxjs-dev.firebaseapp.com/
+api/operators/debounceTime
