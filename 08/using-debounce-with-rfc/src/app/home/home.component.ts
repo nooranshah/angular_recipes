@@ -2,7 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { UserService } from '../core/services/user.service';
 import { IUser } from '../core/interfaces/user.interface';
 import { FormControl, FormGroup } from '@angular/forms';
-import { takeWhile,deboundsTime } from 'rxjs/operators';
+import { takeWhile,debounceTime } from 'rxjs/operators';
 
 @Component({
   selector: 'app-home',
@@ -26,7 +26,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.searchUsers();
     this.searchForm.get('username').valueChanges
       .pipe(
-        deboundsTime(this.searchDeboundsTime),
+        debounceTime(this.searchDeboundsTime),
         takeWhile(() => !!this.componentAlive)
       )
       .subscribe(() => {
